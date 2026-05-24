@@ -1,6 +1,12 @@
 # Операторно-параметрические схемы модели ремонта "Прибор-Мастер"
 
-## Схема блока ПРИБОР
+**Студент:** _________________  
+**Группа:** _________________  
+**Дата:** _________________
+
+---
+
+## 1. Операторно-параметрическая схема блока ПРИБОР
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
@@ -21,6 +27,7 @@ flowchart LR
     h6 ==> h7["сост:=рабочий<br>мастер:=своб<br>Тслом:=func(x)"]
     h7 ==> h1
     
+    %% Связи с параметрами
     h2 -.- par3((сост))
     h7 -.- par3
     par1((режим)) -.- h3
@@ -28,9 +35,12 @@ flowchart LR
     h7 -.- par2
     h5 -.- par4((Трем))
     par4 -.- h6
+    
+    %% Инициализаторы
     Ini@{shape: braces, label: "I::"} -.- h1
     HTf@{shape: braces, label: "I::Tclom = 100"}
     
+    %% Настройка кривых связей
     h2 e11@==> h3
     h5 e20@==> h6
     h7 e10@==> h1
@@ -38,6 +48,7 @@ flowchart LR
     e11@{ curve: natural}
     e20@{ curve: stepAfter}
     
+    %% Стили узлов
     classDef cond fill:#bee,stroke:#aaa,stroke-width:1px;
     classDef state fill:#9e8,stroke:#333,stroke-width:1px;
     class h5,h2,h7 state;
@@ -47,8 +58,6 @@ flowchart LR
     style par2 fill:#fae,stroke:#bbb,stroke-width:2px;
     style par4 fill:#ccc,stroke:#555,stroke-width:2px;
     
-    click par2 href "https://iu5.bmstu.ru" "переход для Мастера" _blank;
-    click par4 href "https://mermaid.js.org" "информация о параметре Трем" _blank;
-
-
-
+    %% Кликабельные ссылки
+    click par2 href "https://iu5.bmstu.ru" "Переход для Мастера" _blank;
+    click par4 href "https://mermaid.js.org" "Информация о параметре Трем" _blank;

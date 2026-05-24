@@ -58,8 +58,12 @@ flowchart LR
     %% Кликабельные ссылки
     click par2 href "https://iu5.bmstu.ru" "Переход для Мастера" _blank;
     click par4 href "https://mermaid.js.org" "Информация о параметре Трем" _blank;
-
+    
 ---
+
+## 2. Операторно-параметрическая схема блока МАСТЕР
+
+```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
   'primaryColor': '#ffcc00',
   'primaryTextColor': '#000',
@@ -94,7 +98,12 @@ flowchart LR
     class h10,h14 cond;
     class h12,h15 navig;
     style title_m fill:yellow,stroke:red;
+    
 ---
+
+## 3. Объединённая схема модели ремонта ПРИБОР-МАСТЕР
+
+```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
   'primaryColor': '#ffcc00',
   'primaryTextColor': '#000',

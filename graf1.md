@@ -51,39 +51,4 @@ flowchart LR
     click par4 href "https://mermaid.js.org" "информация о параметре Трем" _blank;
 
 
-## Схема блока МАСТЕР
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {
-  'primaryColor': '#ffcc00',
-  'primaryTextColor': '#000',
-  'primaryBorderColor': '#7C0000',
-  'lineColor': '#F8B229',
-  'secondaryColor': '#006100',
-  'tertiaryColor': '#fff'
-}}}%%
-flowchart LR
-    title_m[<em>Блок МАСТЕР</em>]
-    
-    h10(["ВРЕМЯ=Тцикл"]) ==> h11["мастер:=своб"]
-    h11 ==> h12{"заявка<br>есть?"}
-    h12 ==>|"да"| h13["мастер:=занят"]
-    h13 ==> h14(["ВРЕМЯ=Траб"])
-    h14 ==> h15{"мастер<br>=>..."}
-    h15 ==>|"...= занят"| h16["Трем:=Трем:+<br>Траб-ВРЕМЯ"]
-    h15 ==>|"...= свобод"| h11
-    h16 ==> h10
-    h12 ==>|"нет"| h10
-    
-    h11 -.- par_m1((сост_мастера))
-    h13 -.- par_m1
-    h15 -.- par_m2((мастер))
-    
-    classDef navig fill:#eda,stroke:#333,stroke-width:1px;
-    classDef cond fill:#bee,stroke:#aaa,stroke-width:1px;
-    classDef state fill:#9e8,stroke:#333,stroke-width:1px;
-    class h11,h13,h16 state;
-    class h10,h14 cond;
-    class h12,h15 navig;
-    style title_m fill:yellow,stroke:red;
 

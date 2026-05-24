@@ -61,3 +61,56 @@ state Ремонтник{
     endwork--> startwork: время_работы-?
 }
 ```
+```mermaid
+---
+title: Складское обслуживание
+config:
+  theme: neo
+  look: neo
+---
+stateDiagram-v2
+direction TB
+
+[*]--> Склад_Работает
+
+state Склад_Работает {
+    direction LR
+    
+    state "Нормальный запас" as Normal
+    state "Низкий запас" as Low
+    state "Ожидание поставки" as Waiting
+    state "Инвентаризация" as Inventory
+    
+    [*]--> Normal
+    
+    Normal--> Normal: Спрос 40-63 шт.<br>запас > 600
+    Normal--> Low: Спрос 40-63 шт.<br>запас <= 600
+    
+    Low--> Inventory: Пятница
+    Normal--> Inventory: Пятница
+    
+    Inventory--> Normal: запас >= 600
+    Inventory--> Waiting: запас < 600<br>заказ = 1000 - запас
+    
+    Waiting--> Normal: Доставка получена<br>через 5 дней
+    
+    note right of Waiting
+      Время доставки:<br>5 рабочих дней
+    end note
+    note left of Inventory
+      Проверка каждую пятницу
+    end note
+}
+
+Склад_Работает--> [*]: Конец модели
+
+classDef normalState fill:#e1f5fe,stroke:#01579b
+classDef lowState fill:#fff3e0,stroke:#e65100
+classDef waitState fill:#fce4ec,stroke:#880e4f
+classDef inventoryState fill:#e8f5e9,stroke:#1b5e20
+
+class Normal normalState
+class Low lowState
+class Waiting waitState
+class Inventory inventoryState
+```

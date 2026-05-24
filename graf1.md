@@ -51,6 +51,8 @@ flowchart LR
     
     click par2 href "https://iu5.bmstu.ru" "Переход для Мастера" _blank;
     click par4 href "https://mermaid.js.org" "Информация о параметре Трем" _blank;
+```
+```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
   'primaryColor': '#ffcc00',
   'primaryTextColor': '#000',
@@ -83,6 +85,8 @@ flowchart LR
     class h10,h14 cond;
     class h12,h15 navig;
     style title_m fill:yellow,stroke:red;
+```
+```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
   'primaryColor': '#ffcc00',
   'primaryTextColor': '#000',
@@ -148,4 +152,5 @@ flowchart TD
     
     click p4 href "https://iu5.bmstu.ru" "Переход для Мастера" _blank;
     click p5 href "https://mermaid.js.org/syntax/flowchart.html" "Параметры ремонта" _blank;
+```
 

@@ -44,7 +44,7 @@ flowchart LR
     classDef state fill:#9e8,stroke:#333,stroke-width:1px;
     class h5,h2,h7 state;
     class h1,h3,h6 cond;
-    style title fill:yellow,stroke:red;
+    style title fill:yellow,stroke:pink;
     style par1 fill:#fcc,stroke:#111,stroke-width:2px;
     style par2 fill:#fae,stroke:#bbb,stroke-width:2px;
     style par4 fill:#ccc,stroke:#555,stroke-width:2px;
@@ -85,7 +85,7 @@ flowchart LR
     class h11,h13,h16 state;
     class h10,h14 cond;
     class h12,h15 navig;
-    style title_m fill:yellow,stroke:red;
+    style title_m fill:yellow,stroke:pink;
 ```
 ## 3. Объединённая схема модели ремонта ПРИБОР-МАСТЕР
 ```mermaid
@@ -148,7 +148,7 @@ flowchart TD
     class e1,e3,e5,m1,m5 cond;
     class m3,m6 navig;
     
-    style title_all fill:yellow,stroke:red,stroke-width:2px;
+    style title_all fill:yellow,stroke:pink,stroke-width:2px;
     style equip fill:#eef,stroke:#333,stroke-width:2px;
     style master fill:#fee,stroke:#333,stroke-width:2px;
     

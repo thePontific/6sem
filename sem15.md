@@ -1,3 +1,4 @@
+```mermaid
 ---
 title: Расширенная иерархическая машина состояний
 config:
@@ -59,3 +60,4 @@ state Ремонтник{
     startwork--> endwork: время_отдыха-?
     endwork--> startwork: время_работы-?
 }
+```
